@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "驾校", "驾校.csproj", "{19649F68-4A1B-4D42-9CBC-6EE056B9F248}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{B6C7B904-23BA-4DE4-AF00-5ACF9F2B5112}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19649F68-4A1B-4D42-9CBC-6EE056B9F248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19649F68-4A1B-4D42-9CBC-6EE056B9F248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19649F68-4A1B-4D42-9CBC-6EE056B9F248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19649F68-4A1B-4D42-9CBC-6EE056B9F248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C7B904-23BA-4DE4-AF00-5ACF9F2B5112}.Debug|Any CPU.ActiveCfg = Debug
+		{B6C7B904-23BA-4DE4-AF00-5ACF9F2B5112}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84332055-5891-478E-86E1-0D787091FC03}
+	EndGlobalSection
+EndGlobal

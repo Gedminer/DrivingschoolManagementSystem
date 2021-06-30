@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19649F68-4A1B-4D42-9CBC-6EE056B9F248}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>驾校</RootNamespace>
+    <AssemblyName>驾校</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.DebuggerVisualizers %282010%29, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0646c9a9e79f6b03, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.DebuggerVisualizers (2010).dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Fuzzy, Version=2.2.4.0, Culture=neutral, PublicKeyToken=cb12670d0eae17c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Fuzzy.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Genetic, Version=2.2.4.0, Culture=neutral, PublicKeyToken=4336634eeb41b69b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Genetic.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.Formats, Version=2.2.4.0, Culture=neutral, PublicKeyToken=8065ed5a639199a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Imaging.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging.IPPrototyper, Version=1.0.1.1, Culture=neutral, PublicKeyToken=c6e9a6d4c86d47e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Imaging.IPPrototyper.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.MachineLearning, Version=2.2.4.0, Culture=neutral, PublicKeyToken=b3f1bdd78212f4e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro, Version=2.2.5.0, Culture=neutral, PublicKeyToken=2094f4ea39731d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.Lego, Version=2.2.5.0, Culture=neutral, PublicKeyToken=5f361631ec856b74, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Robotics.Lego.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.Surveyor, Version=2.2.4.0, Culture=neutral, PublicKeyToken=7ed9f718a0f5b2f6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Robotics.Surveyor.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Robotics.TeRK, Version=2.2.5.0, Culture=neutral, PublicKeyToken=5c0f140128226168, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Robotics.TeRK.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG, Version=2.2.5.0, Culture=neutral, PublicKeyToken=03563089b1be05dd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.Kinect, Version=2.2.4.0, Culture=neutral, PublicKeyToken=96a9a097745e71d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.VFW, Version=2.2.4.0, Culture=neutral, PublicKeyToken=a82f807c999637c8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.VFW.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.Ximea, Version=2.2.4.0, Culture=neutral, PublicKeyToken=5cdcd64958730f99, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Video.Ximea.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision, Version=2.2.5.0, Culture=neutral, PublicKeyToken=b612fa915eefaa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="AipSdk, Version=3.6.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Baidu.AI.3.6.14\lib\net45\AipSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="IPPrototyper, Version=1.0.1.1, Culture=neutral, PublicKeyToken=deedab63545c06c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AForge.NET Framework-2.2.5-(libs only)\Release\IPPrototyper.exe</HintPath>
+    </Reference>
+    <Reference Include="IrisSkin4, Version=2006.3.22.45, Culture=neutral, PublicKeyToken=127be25a6db25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\UI\IrisSkin4.dll\IrisSkin4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.NotificationHubs, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Azure.NotificationHubs.4.1.0\lib\net461\Microsoft.Azure.NotificationHubs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Caching.Memory.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.3.1.8\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="知识点\A证知识点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="知识点\A证知识点.Designer.cs">
+      <DependentUpon>A证知识点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="知识点\B证知识点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="知识点\B证知识点.Designer.cs">
+      <DependentUpon>B证知识点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="知识点\C证知识点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="知识点\C证知识点.Designer.cs">
+      <DependentUpon>C证知识点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Face.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Face.Designer.cs">
+      <DependentUpon>Face.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmAddCourseForTea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmAddCourseForTea.Designer.cs">
+      <DependentUpon>FrmAddCourseForTea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmClass.Designer.cs">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmCompletion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmCompletion.Designer.cs">
+      <DependentUpon>FrmCompletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmCourse.Designer.cs">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestion.Designer.cs">
+      <DependentUpon>FrmQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExam.Designer.cs">
+      <DependentUpon>FrmQuestionExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExamCompletion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExamCompletion.Designer.cs">
+      <DependentUpon>FrmQuestionExamCompletion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExamSigleChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionExamSigleChoice.Designer.cs">
+      <DependentUpon>FrmQuestionExamSigleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmQuestionItems.Designer.cs">
+      <DependentUpon>FrmQuestionItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmSigleChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmSigleChoice.Designer.cs">
+      <DependentUpon>FrmSigleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStudentInfo.Designer.cs">
+      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStuGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStuGrade.Designer.cs">
+      <DependentUpon>FrmStuGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStuStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmStuStart.Designer.cs">
+      <DependentUpon>FrmStuStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeacher.Designer.cs">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeacherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeacherInfo.Designer.cs">
+      <DependentUpon>FrmTeacherInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeaGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="模拟测试端\FrmTeaGrade.Designer.cs">
+      <DependentUpon>FrmTeaGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalData.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="testDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="testDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>testDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="不及格学员.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="不及格学员.Designer.cs">
+      <DependentUpon>不及格学员.cs</DependentUpon>
+    </Compile>
+    <Compile Include="学生端.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="学生端.Designer.cs">
+      <DependentUpon>学生端.cs</DependentUpon>
+    </Compile>
+    <Compile Include="学生自学知识点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="学生自学知识点.Designer.cs">
+      <DependentUpon>学生自学知识点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="学生自学答题.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="学生自学答题.Designer.cs">
+      <DependentUpon>学生自学答题.cs</DependentUpon>
+    </Compile>
+    <Compile Include="学生自学系统.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="学生自学系统.Designer.cs">
+      <DependentUpon>学生自学系统.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户端选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户端选择.Designer.cs">
+      <DependentUpon>客户端选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="开设课程.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="开设课程.Designer.cs">
+      <DependentUpon>开设课程.cs</DependentUpon>
+    </Compile>
+    <Compile Include="录入成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="录入成绩.Designer.cs">
+      <DependentUpon>录入成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="打卡签到.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="打卡签到.Designer.cs">
+      <DependentUpon>打卡签到.cs</DependentUpon>
+    </Compile>
+    <Compile Include="教师端.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="教师端.Designer.cs">
+      <DependentUpon>教师端.cs</DependentUpon>
+    </Compile>
+    <Compile Include="教练评价.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="教练评价.Designer.cs">
+      <DependentUpon>教练评价.cs</DependentUpon>
+    </Compile>
+    <Compile Include="查看签到.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查看签到.Designer.cs">
+      <DependentUpon>查看签到.cs</DependentUpon>
+    </Compile>
+    <Compile Include="查看课程时间.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查看课程时间.Designer.cs">
+      <DependentUpon>查看课程时间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="查询成绩.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询成绩.Designer.cs">
+      <DependentUpon>查询成绩.cs</DependentUpon>
+    </Compile>
+    <Compile Include="查询课程.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="查询课程.Designer.cs">
+      <DependentUpon>查询课程.cs</DependentUpon>
+    </Compile>
+    <Compile Include="注册信息.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="注册信息.Designer.cs">
+      <DependentUpon>注册信息.cs</DependentUpon>
+    </Compile>
+    <Compile Include="注册界面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="注册界面.Designer.cs">
+      <DependentUpon>注册界面.cs</DependentUpon>
+    </Compile>
+    <Compile Include="添加学员.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="添加学员.Designer.cs">
+      <DependentUpon>添加学员.cs</DependentUpon>
+    </Compile>
+    <Compile Include="添加教练.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="添加教练.Designer.cs">
+      <DependentUpon>添加教练.cs</DependentUpon>
+    </Compile>
+    <Compile Include="设置自学测试题.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="设置自学测试题.Designer.cs">
+      <DependentUpon>设置自学测试题.cs</DependentUpon>
+    </Compile>
+    <Compile Include="课程选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="课程选择.Designer.cs">
+      <DependentUpon>课程选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="车辆维护上报.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="车辆维护上报.Designer.cs">
+      <DependentUpon>车辆维护上报.cs</DependentUpon>
+    </Compile>
+    <Compile Include="驾校管理系统.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="驾校管理系统.Designer.cs">
+      <DependentUpon>驾校管理系统.cs</DependentUpon>
+    </Compile>
+    <Compile Include="二级页面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="二级页面.Designer.cs">
+      <DependentUpon>二级页面.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="驾校管理系统主界面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="驾校管理系统主界面.Designer.cs">
+      <DependentUpon>驾校管理系统主界面.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="知识点\A证知识点.resx">
+      <DependentUpon>A证知识点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="知识点\B证知识点.resx">
+      <DependentUpon>B证知识点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="知识点\C证知识点.resx">
+      <DependentUpon>C证知识点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Face.resx">
+      <DependentUpon>Face.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmAddCourseForTea.resx">
+      <DependentUpon>FrmAddCourseForTea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmClass.resx">
+      <DependentUpon>FrmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmCompletion.resx">
+      <DependentUpon>FrmCompletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmCourse.resx">
+      <DependentUpon>FrmCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmQuestion.resx">
+      <DependentUpon>FrmQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmQuestionExam.resx">
+      <DependentUpon>FrmQuestionExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmQuestionExamCompletion.resx">
+      <DependentUpon>FrmQuestionExamCompletion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmQuestionExamSigleChoice.resx">
+      <DependentUpon>FrmQuestionExamSigleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmQuestionItems.resx">
+      <DependentUpon>FrmQuestionItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmSigleChoice.resx">
+      <DependentUpon>FrmSigleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmStudent.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmStudentInfo.resx">
+      <DependentUpon>FrmStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmStuGrade.resx">
+      <DependentUpon>FrmStuGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmStuStart.resx">
+      <DependentUpon>FrmStuStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmTeacher.resx">
+      <DependentUpon>FrmTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmTeacherInfo.resx">
+      <DependentUpon>FrmTeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="模拟测试端\FrmTeaGrade.resx">
+      <DependentUpon>FrmTeaGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\驾校.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.不及格学员.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.二级页面.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.学生端.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.学生自学知识点.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.学生自学答题.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.学生自学系统.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.客户端选择.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.开设课程.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.录入成绩.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.打卡签到.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.教师端.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.教练评价.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.查看签到.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.查看课程时间.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.查询成绩.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.注册信息.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.注册界面.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.添加学员.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.添加教练.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.设置自学测试题.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.课程选择.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.驾校管理系统.resources" />
+    <EmbeddedResource Include="obj\Debug\驾校.驾校管理系统主界面.resources" />
+    <EmbeddedResource Include="不及格学员.resx">
+      <DependentUpon>不及格学员.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="二级页面.resx">
+      <DependentUpon>二级页面.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="学生端.resx">
+      <DependentUpon>学生端.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="学生自学知识点.resx">
+      <DependentUpon>学生自学知识点.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="学生自学答题.resx">
+      <DependentUpon>学生自学答题.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="学生自学系统.resx">
+      <DependentUpon>学生自学系统.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户端选择.resx">
+      <DependentUpon>客户端选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="开设课程.resx">
+      <DependentUpon>开设课程.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="录入成绩.resx">
+      <DependentUpon>录入成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="打卡签到.resx">
+      <DependentUpon>打卡签到.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="教师端.resx">
+      <DependentUpon>教师端.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="教练评价.resx">
+      <DependentUpon>教练评价.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查看签到.resx">
+      <DependentUpon>查看签到.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查看课程时间.resx">
+      <DependentUpon>查看课程时间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询成绩.resx">
+      <DependentUpon>查询成绩.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="查询课程.resx">
+      <DependentUpon>查询课程.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="注册信息.resx">
+      <DependentUpon>注册信息.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="注册界面.resx">
+      <DependentUpon>注册界面.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="添加学员.resx">
+      <DependentUpon>添加学员.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="添加教练.resx">
+      <DependentUpon>添加教练.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="设置自学测试题.resx">
+      <DependentUpon>设置自学测试题.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="课程选择.resx">
+      <DependentUpon>课程选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="驾校管理系统.resx">
+      <DependentUpon>驾校管理系统.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="驾校管理系统主界面.resx">
+      <DependentUpon>驾校管理系统主界面.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\驾校.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\驾校.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\驾校.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\驾校.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="testDataSet.xsc">
+      <DependentUpon>testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet.xss">
+      <DependentUpon>testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet1.xsc">
+      <DependentUpon>testDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet1.xss">
+      <DependentUpon>testDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet10.xsc">
+      <DependentUpon>testDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet10.xss">
+      <DependentUpon>testDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet2.xsc">
+      <DependentUpon>testDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet2.xss">
+      <DependentUpon>testDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet3.xsc">
+      <DependentUpon>testDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet3.xss">
+      <DependentUpon>testDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet4.xsc">
+      <DependentUpon>testDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet4.xss">
+      <DependentUpon>testDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet5.xsc">
+      <DependentUpon>testDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet5.xss">
+      <DependentUpon>testDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet6.xsc">
+      <DependentUpon>testDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet6.xss">
+      <DependentUpon>testDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet7.xsc">
+      <DependentUpon>testDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet7.xss">
+      <DependentUpon>testDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet8.xsc">
+      <DependentUpon>testDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet8.xss">
+      <DependentUpon>testDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet9.xsc">
+      <DependentUpon>testDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="testDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>testDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="testDataSet9.xss">
+      <DependentUpon>testDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="WindowsFormsApplication2.csproj" />
+    <None Include="数据库备份database backup\problem_solving_system.bak" />
+    <None Include="数据库备份database backup\test.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\驾校.exe" />
+    <Content Include="bin\Debug\驾校.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet2.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet3.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet4.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet5.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet6.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet7.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet8.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\testDataSet9.Designer.cs.dll" />
+    <Content Include="obj\Debug\驾校.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\驾校.exe" />
+    <Content Include="obj\Debug\驾校.pdb" />
+    <Content Include="Resources\steering wheel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
